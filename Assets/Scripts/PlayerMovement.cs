@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10;
     public float maxSpeed = 20;
+    public float upSpeed = 10;
+    private bool onGroundState = true;
     private Rigidbody2D marioBody;
 
     // Start is called before the first frame update
@@ -42,5 +44,16 @@ public class PlayerMovement : MonoBehaviour
             // stop
             marioBody.linearVelocity = Vector2.zero;
         }
+
+        if (Input.GetKeyDown("space") && onGroundState)
+        {
+            marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
+            onGroundState = false;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground")) onGroundState = true;
     }
 }
