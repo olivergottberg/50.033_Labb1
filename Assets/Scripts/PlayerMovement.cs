@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject enemies;
     public JumpOverGoomba jumpOverGoomba;
+    public GameObject gameOverPanel;
+    public GameObject restartButton;
+    public TextMeshProUGUI gameOverScoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -79,7 +82,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Collided with goomba!");
+            gameOverScoreText.text = scoreText.text;
+            scoreText.gameObject.SetActive(false);
+            restartButton.SetActive(false);
+            gameOverPanel.SetActive(true);
+
+            Debug.Log("Collided with goomba!"); //delete
             Time.timeScale = 0.0f;
         }
     }
@@ -102,6 +110,13 @@ public class PlayerMovement : MonoBehaviour
         marioSprite.flipX = false;
         // reset score
         scoreText.text = "Score: 0";
+
+        //reset game over panel
+        gameOverScoreText.text = "Score: 0";
+        scoreText.gameObject.SetActive(true);
+        restartButton.SetActive(true);
+        gameOverPanel.SetActive(false);
+
         // reset Goomba
         foreach (Transform eachChild in enemies.transform)
         {
