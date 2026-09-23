@@ -9,10 +9,13 @@ public class PlayerMovement : MonoBehaviour
     public float upSpeed = 10;
     private bool onGroundState = true;
     private Rigidbody2D marioBody;
+    private SpriteRenderer marioSprite;
+    private bool faceRightState = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        marioSprite = GetComponent<SpriteRenderer>();
         // Set to be 30 FPS
         Application.targetFrameRate = 30;
         marioBody = GetComponent<Rigidbody2D>();
@@ -22,7 +25,18 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // toggle state
+        if (Input.GetKeyDown("a") && faceRightState)
+        {
+            faceRightState = false;
+            marioSprite.flipX = true;
+        }
 
+        if (Input.GetKeyDown("d") && !faceRightState)
+        {
+            faceRightState = true;
+            marioSprite.flipX = false;
+        }
     }
 
     // FixedUpdate is called 50 times a second
@@ -55,5 +69,13 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ground")) onGroundState = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Collided with goomba!");
+        }
     }
 }

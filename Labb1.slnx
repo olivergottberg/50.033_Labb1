@@ -62,6 +62,7 @@
   <Project Path="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
   <Project Path="UnityEditor.UI.Analytics.csproj" />
   <Project Path="Unity.Tutorials.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.PathTracing.Runtime.csproj" />
   <Project Path="Unity.2D.Common.Runtime.csproj" />
   <Project Path="Unity.PathTracing.Editor.csproj" />
@@ -90,7 +91,6 @@
   <Project Path="Unity.VisualScripting.DocCodeExamples.csproj" />
   <Project Path="Unity.Collections.Tests.CoreCLR.PrivateJobNested.csproj" />
   <Project Path="Unity.PlasticSCM.Editor.Entities.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.Collections.Tests.CoreCLR.ProtectedJobNested.csproj" />
   <Project Path="Unity.Burst.csproj" />
   <Project Path="Unity.Rendering.LightTransport.Editor.csproj" />
@@ -123,6 +123,7 @@
   <Project Path="Unity.2D.Tilemap.Extras.Player.csproj" />
   <Project Path="Unity.2D.Animation.Runtime.Player.csproj" />
   <Project Path="Unity.Tutorials.Player.csproj" />
+  <Project Path="Assembly-CSharp.Player.csproj" />
   <Project Path="Unity.PathTracing.Runtime.Player.csproj" />
   <Project Path="Unity.2D.Common.Runtime.Player.csproj" />
   <Project Path="Unity.InputSystem.TestFramework.Player.csproj" />
@@ -139,7 +140,6 @@
   <Project Path="Unity.2D.Welcome.Player.csproj" />
   <Project Path="Unity.VisualScripting.DocCodeExamples.Player.csproj" />
   <Project Path="Unity.Collections.Tests.CoreCLR.PrivateJobNested.Player.csproj" />
-  <Project Path="Assembly-CSharp.Player.csproj" />
   <Project Path="Unity.Collections.Tests.CoreCLR.ProtectedJobNested.Player.csproj" />
   <Project Path="Unity.Burst.Player.csproj" />
   <Project Path="Unity.Mathematics.Player.csproj" />
