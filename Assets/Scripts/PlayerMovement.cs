@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private bool faceRightState = true;
     public TextMeshProUGUI scoreText;
     public GameObject enemies;
+    public JumpOverGoomba jumpOverGoomba;
 
     // Start is called before the first frame update
     void Start()
@@ -106,5 +107,7 @@ public class PlayerMovement : MonoBehaviour
         {
             eachChild.transform.localPosition = eachChild.GetComponent<EnemyMovement>().startPosition;
         }
+        // reset score
+        jumpOverGoomba.score = 0;
     }
 }
