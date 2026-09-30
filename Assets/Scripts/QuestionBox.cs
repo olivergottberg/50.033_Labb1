@@ -14,11 +14,14 @@ public class QuestionBox : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            used = true;
-            coinAnimator.Play("Coin");
-            GetComponent<Animator>().enabled = false;
-            GetComponent<SpriteRenderer>().sprite = disabledSprite;
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            if (collision.transform.position.y < transform.position.y)
+            {
+                used = true;
+                coinAnimator.Play("Coin");
+                GetComponent<Animator>().enabled = false;
+                GetComponent<SpriteRenderer>().sprite = disabledSprite;
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            }
         }
     }
 }
