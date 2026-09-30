@@ -2508,6 +2508,8 @@ MonoBehaviour:
   gameOverScoreText: {fileID: 1357679153}
   marioAnimator: {fileID: 1306152587}
   marioAudio: {fileID: 1306152588}
+  marioDeath: {fileID: 8300000, guid: dcc06927848a4441fa4b96db07fed720, type: 3}
+  deathImpulse: 15
 --- !u!50 &1306152584
 Rigidbody2D:
   serializedVersion: 5
