@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI gameOverScoreText;
     // for animation
     public Animator marioAnimator;
+    // for audio
+    public AudioSource marioAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -92,6 +94,12 @@ public class PlayerMovement : MonoBehaviour
             // update animator state
             marioAnimator.SetBool("onGround", onGroundState);
         }
+    }
+
+    void PlayJumpSound()
+    {
+        // play jump sound
+        marioAudio.PlayOneShot(marioAudio.clip);
     }
 
     void OnTriggerEnter2D(Collider2D other)
