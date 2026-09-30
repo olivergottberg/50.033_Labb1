@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip marioDeath;
     public float deathImpulse = 15;
     public Transform gameCamera;
+    int collisionLayerMask = (1 << 6) | (1 << 7) | (1 << 8);
 
     // state
     [System.NonSerialized]
@@ -98,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Ground") && !onGroundState)
+        if (((collisionLayerMask & (1 << col.transform.gameObject.layer)) > 0) & !onGroundState)
         {
             onGroundState = true;
             // update animator state
