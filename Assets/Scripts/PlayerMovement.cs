@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool moving = false;
     private bool jumpedState = false;
     public TextMeshProUGUI scoreText;
-    public GameObject enemies;
+    //public GameObject enemies;
     public JumpOverGoomba jumpOverGoomba;
     public GameObject gameOverPanel;
     public GameObject restartButton;
@@ -181,32 +181,43 @@ public class PlayerMovement : MonoBehaviour
     private void ResetGame()
     {
         // reset position
-        marioBody.transform.position = new Vector3(0.0f, 0.083f, 0.0f);
+        //marioBody.transform.position = new Vector3(0.0f, 0.083f, 0.0f);
         // reset sprite direction
-        faceRightState = true;
-        marioSprite.flipX = false;
+        //faceRightState = true;
+        //marioSprite.flipX = false;
         // reset score
         scoreText.text = "Score: 0";
 
         //reset game over panel
-        gameOverScoreText.text = "Score: 0";
+        /*gameOverScoreText.text = "Score: 0";
         scoreText.gameObject.SetActive(true);
         restartButton.SetActive(true);
-        gameOverPanel.SetActive(false);
+        gameOverPanel.SetActive(false);*/
 
         // reset Goomba
-        foreach (Transform eachChild in enemies.transform)
+        /*foreach (Transform eachChild in enemies.transform)
         {
             eachChild.transform.localPosition = eachChild.GetComponent<EnemyMovement>().startPosition;
-        }
+        }*/
         // reset score
         jumpOverGoomba.score = 0;
 
         // reset animation
-        marioAnimator.SetTrigger("gameRestart");
-        alive = true;
+        //marioAnimator.SetTrigger("gameRestart");
+        //alive = true;
 
         // reset camera position
+        //gameCamera.position = new Vector3(4.14f, 5.26f, -10);
+    }
+
+    public void GameRestart()
+    {
+        // Marios restart-grejer
+        marioBody.transform.position = new Vector3(0.0f, 0.083f, 0.0f);
+        faceRightState = true;
+        marioSprite.flipX = false;
+        marioAnimator.SetTrigger("gameRestart");
+        alive = true;
         gameCamera.position = new Vector3(4.14f, 5.26f, -10);
     }
 
