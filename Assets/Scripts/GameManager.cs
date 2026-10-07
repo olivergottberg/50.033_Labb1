@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
         scoreChange.Invoke(score);
     }
 
-
     public void GameOver()
     {
         Time.timeScale = 0.0f;
