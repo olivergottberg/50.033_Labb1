@@ -15,7 +15,7 @@ public class Brick : MonoBehaviour
                 brickAnimator.Play(bounceAnimation);
                 if (coinAnimator != null)
                 {
-                    coinAnimator.Play("Coin_brick");
+                    coinAnimator.Play("Coin");
                 }
             }
 

@@ -19,6 +19,7 @@ public class QuestionBox : MonoBehaviour
                 used = true;
                 coinAnimator.Play("Coin");
                 GetComponent<Animator>().enabled = false;
+                //TODO: Improve animation so it doesnt get disabled mid-air
                 GetComponent<SpriteRenderer>().sprite = disabledSprite;
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             }
