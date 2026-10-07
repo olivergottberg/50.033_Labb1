@@ -595,6 +595,61 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1 &222678901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4204859410417024692, guid: fdbce7dbbdb96465ca5bfe969a8c14b4, type: 3}
+  m_PrefabInstance: {fileID: 4173389812572539072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &222678906
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222678901}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 486b89ba1d1ee4adab4ab6160c0896c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &222678907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222678901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340859382a9a547fea0dc5ac45bb1ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventIntTool
+  parameter: 1
+  useInt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 848597574}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: IncreaseScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &272971992
 GameObject:
   m_ObjectHideFlags: 0
@@ -4521,6 +4576,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1697543221}
     m_Modifications:
+    - target: {fileID: 2179376279099035722, guid: fdbce7dbbdb96465ca5bfe969a8c14b4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4204859410417024692, guid: fdbce7dbbdb96465ca5bfe969a8c14b4, type: 3}
       propertyPath: m_Name
       value: Goomba
@@ -4568,7 +4627,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4204859410417024692, guid: fdbce7dbbdb96465ca5bfe969a8c14b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 222678906}
+    - targetCorrespondingSourceObject: {fileID: 4204859410417024692, guid: fdbce7dbbdb96465ca5bfe969a8c14b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 222678907}
   m_SourcePrefab: {fileID: 100100000, guid: fdbce7dbbdb96465ca5bfe969a8c14b4, type: 3}
 --- !u!1001 &7515186177125912914
 PrefabInstance:

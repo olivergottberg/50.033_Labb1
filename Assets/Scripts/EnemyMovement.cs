@@ -52,6 +52,31 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log(other.gameObject.name);
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("COLLISION: " + collision.gameObject.name);
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("MARIO HIT GOOMBA");
+
+            if (collision.transform.position.y > transform.position.y)
+            {
+                Debug.Log("PLAYER JUMPED ON GOOMBA");
+            }
+        }
+    }
+
+    public void Stomp()
+    {
+        GetComponent<Animator>().Play("GoombaStomp");
+    }
+
+    public void RemoveGoomba()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void GameRestart()
     {
         transform.localPosition = startPosition;
