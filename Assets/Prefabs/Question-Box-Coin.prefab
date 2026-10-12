@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5050070069023339753}
-  - component: {fileID: 5098468043945148659}
   m_Layer: 7
   m_Name: Question-Box-Coin
   m_TagString: Untagged
@@ -25,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3416110360189208631}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.54, y: -0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34,51 +33,6 @@ Transform:
   - {fileID: 3687867211091099459}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &5098468043945148659
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3416110360189208631}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.51862144, y: -0.51770353}
-  - {x: -0.5310478, y: 0.54479885}
-  - {x: 0.5291195, y: 0.54847765}
-  - {x: 0.54096985, y: -0.49535656}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!1001 &4814431685894137796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138,8 +92,59 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8988905611521198311, guid: c851e1342156746b9819e2018638304e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6291889939026865857}
   m_SourcePrefab: {fileID: 100100000, guid: c851e1342156746b9819e2018638304e, type: 3}
+--- !u!1 &4498900430757457699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8988905611521198311, guid: c851e1342156746b9819e2018638304e, type: 3}
+  m_PrefabInstance: {fileID: 4814431685894137796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!68 &6291889939026865857
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4498900430757457699}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.43608665, y: -0.50628304}
+  - {x: 0.43862915, y: -0.50630474}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!4 &7095529865402745743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2353182267089314891, guid: c851e1342156746b9819e2018638304e, type: 3}
@@ -153,6 +158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5050070069023339753}
     m_Modifications:
+    - target: {fileID: 2799604723608681119, guid: 4c31a4a5541d0434184f6b568e72d3ca, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1636304684018153190, guid: fb8d4fac159294f5f8e82e533c4dfe81, type: 2}
     - target: {fileID: 5173092321037530187, guid: 4c31a4a5541d0434184f6b568e72d3ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -200,8 +209,75 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8427090951354060359, guid: 4c31a4a5541d0434184f6b568e72d3ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6742372169003825561}
+    - targetCorrespondingSourceObject: {fileID: 8427090951354060359, guid: 4c31a4a5541d0434184f6b568e72d3ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 933585814892548338}
   m_SourcePrefab: {fileID: 100100000, guid: 4c31a4a5541d0434184f6b568e72d3ca, type: 3}
+--- !u!1 &5736345083643215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8427090951354060359, guid: 4c31a4a5541d0434184f6b568e72d3ca, type: 3}
+  m_PrefabInstance: {fileID: 8423820095001398024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6742372169003825561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5736345083643215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340859382a9a547fea0dc5ac45bb1ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventIntTool
+  parameter: 1
+  useInt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: IncreaseScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &933585814892548338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5736345083643215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340859382a9a547fea0dc5ac45bb1ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventIntTool
+  parameter: 1
+  useInt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: IncreaseScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &3687867211091099459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5173092321037530187, guid: 4c31a4a5541d0434184f6b568e72d3ca, type: 3}

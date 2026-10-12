@@ -9,7 +9,7 @@ public class QuestionBox : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (used)
+        /*if (used)
             return;
 
         if (collision.gameObject.CompareTag("Player"))
@@ -23,6 +23,22 @@ public class QuestionBox : MonoBehaviour
                 GetComponent<SpriteRenderer>().sprite = disabledSprite;
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             }
+        }*/
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (used)
+            return;
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            used = true;
+            coinAnimator.Play("Coin");
+            GetComponent<Animator>().enabled = false;
+            //TODO: Improve animation so it doesnt get disabled mid-air
+            GetComponent<SpriteRenderer>().sprite = disabledSprite;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
     }
 }
