@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Singleton<PlayerMovement>
 {
     GameManager gameManager;
     public float speed = 10;
@@ -21,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     public Transform gameCamera;
     int collisionLayerMask = (1 << 6) | (1 << 7) | (1 << 8);
 
-
     // state
     [System.NonSerialized]
     public bool alive = true;
@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("PLAYER START: " + gameObject.name);
+
         marioSprite = GetComponent<SpriteRenderer>();
         // Set to be 30 FPS
         Application.targetFrameRate = 30;
@@ -36,6 +38,22 @@ public class PlayerMovement : MonoBehaviour
         // update animator state
         marioAnimator.SetBool("onGround", onGroundState);
         gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
+        SceneManager.activeSceneChanged += SetStartingPosition;
+    }
+
+    public void SetStartingPosition(Scene current, Scene next)
+    {
+        Debug.Log("SET POSITION called for: " + gameObject.name + " -> " + next.name);
+        if (next.name == "World2")
+        {
+            // change the position accordingly in your World-1-2 case
+            this.transform.position = new Vector3(15.76f, 21.14f, 0.0f);
+        }
+    }
+
+    void OnDestroy() //Fixes the bug where it doesn't work on your second playthrough
+    {
+        SceneManager.activeSceneChanged -= SetStartingPosition;
     }
 
     // Update is called once per frame
