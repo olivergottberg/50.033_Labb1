@@ -129,6 +129,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8000628146001865984, guid: fdbce7dbbdb96465ca5bfe969a8c14b4, type: 3}
   m_PrefabInstance: {fileID: 4173389812572539072}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &144620380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4498900430757457699, guid: 28baea4b5f64d446a9a51e6e4fd0566a, type: 3}
+  m_PrefabInstance: {fileID: 493647549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &144620389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144620380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2532198aeca0a4eefbae86eb4a0800da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionBoxPowerupController
+  powerupAnimator: {fileID: 1556088089}
+  powerup: {fileID: 1195338208}
 --- !u!4 &205601493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2770757335283779229, guid: be24e86192d9a45ceaa00e02b721a15e, type: 3}
@@ -302,9 +321,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1195338207}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7664739953925659320, guid: 28baea4b5f64d446a9a51e6e4fd0566a, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 4498900430757457699, guid: 28baea4b5f64d446a9a51e6e4fd0566a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1233017353}
+      addedObject: {fileID: 144620389}
   m_SourcePrefab: {fileID: 100100000, guid: 28baea4b5f64d446a9a51e6e4fd0566a, type: 3}
 --- !u!4 &493647550 stripped
 Transform:
@@ -795,7 +814,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1195338210
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -826,7 +845,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -842,25 +861,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1233017350 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7664739953925659320, guid: 28baea4b5f64d446a9a51e6e4fd0566a, type: 3}
-  m_PrefabInstance: {fileID: 493647549}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1233017353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233017350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2532198aeca0a4eefbae86eb4a0800da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuestionBoxPowerupController
-  powerupAnimator: {fileID: 1556088089}
-  powerup: {fileID: 1195338208}
 --- !u!4 &1286460969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4081275272048543294, guid: 2de6a4e8456024b89af5ad337180cdce, type: 3}
@@ -1039,7 +1039,7 @@ Transform:
   m_GameObject: {fileID: 1556088086}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.08, z: 0}
+  m_LocalPosition: {x: 0, y: -1.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
