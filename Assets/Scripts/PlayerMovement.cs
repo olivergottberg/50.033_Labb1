@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovement : Singleton<PlayerMovement>
+public class PlayerMovement : MonoBehaviour
 {
-    GameManager gameManager;
+    //GameManager gameManager;
     public float speed = 10;
     public float maxSpeed = 20;
     public float upSpeed = 10;
@@ -26,6 +26,11 @@ public class PlayerMovement : Singleton<PlayerMovement>
     [System.NonSerialized]
     public bool alive = true;
 
+    void Awake()
+    {
+        GameManager.instance.gameRestart.AddListener(GameRestart);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,11 +42,11 @@ public class PlayerMovement : Singleton<PlayerMovement>
         marioBody = GetComponent<Rigidbody2D>();
         // update animator state
         marioAnimator.SetBool("onGround", onGroundState);
-        gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
-        SceneManager.activeSceneChanged += SetStartingPosition;
+        //gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
+        //SceneManager.activeSceneChanged += SetStartingPosition;
     }
 
-    public void SetStartingPosition(Scene current, Scene next)
+    /*public void SetStartingPosition(Scene current, Scene next)
     {
         Debug.Log("SET POSITION called for: " + gameObject.name + " -> " + next.name);
         if (next.name == "World2")
@@ -49,12 +54,12 @@ public class PlayerMovement : Singleton<PlayerMovement>
             // change the position accordingly in your World-1-2 case
             this.transform.position = new Vector3(15.76f, 21.14f, 0.0f);
         }
-    }
+    }*/
 
-    void OnDestroy() //Fixes the bug where it doesn't work on your second playthrough
+    /*void OnDestroy() //Fixes the bug where it doesn't work on your second playthrough
     {
         SceneManager.activeSceneChanged -= SetStartingPosition;
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -203,6 +208,6 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
     void GameOverScene()
     {
-        gameManager.GameOver();
+        GameManager.instance.GameOver();
     }
 }
