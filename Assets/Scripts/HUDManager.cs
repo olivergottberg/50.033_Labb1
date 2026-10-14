@@ -10,6 +10,7 @@ public class HUDManager : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("HUD AWAKE - GameManager: " + GameManager.instance);
         GameManager.instance.gameStart.AddListener(GameStart);
         GameManager.instance.scoreChange.AddListener(SetScore);
         GameManager.instance.gameOver.AddListener(GameOver);
