@@ -38,9 +38,16 @@ public class MagicMushroomPowerup : BasePowerup
     public override void SpawnPowerup()
     {
         spawned = true;
-        rigidBody.AddForce(Vector2.right * 3, ForceMode2D.Impulse); // move to the right
+        GetComponent<Collider2D>().enabled = true;
+        rigidBody.bodyType = RigidbodyType2D.Dynamic;
+        StartCoroutine(Spawn());
     }
 
+    IEnumerator Spawn()
+    {
+        yield return null;
+        rigidBody.AddForce(Vector2.right * 3, ForceMode2D.Impulse); // move to the right
+    }
 
     // interface implementation
     public override void ApplyPowerup(MonoBehaviour i)
