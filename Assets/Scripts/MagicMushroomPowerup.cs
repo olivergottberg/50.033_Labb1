@@ -18,7 +18,7 @@ public class MagicMushroomPowerup : BasePowerup
         if (col.gameObject.CompareTag("Player") && spawned)
         {
             // TODO: do something when colliding with Player
-
+            //PowerupManager.instance.powerupCollected.invoke(this);
             // then destroy powerup (optional)
             DestroyPowerup();
 
@@ -46,6 +46,12 @@ public class MagicMushroomPowerup : BasePowerup
     public override void ApplyPowerup(MonoBehaviour i)
     {
         // TODO: do something with the object
-
+        //try
+        /*PlayerMovement mario;
+        bool result = i.TryGetComponent<PlayerMovement>(out mario);
+        if (result)
+        {
+            mario.makeSuperMario();
+        }*/
     }
 }
