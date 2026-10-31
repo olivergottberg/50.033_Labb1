@@ -11,6 +11,11 @@ public class PauseButtonController : MonoBehaviour, IInteractiveButton
     public Sprite playIcon;
     private Image image;
 
+    void Start()
+    {
+        image = GetComponent<Image>();
+    }
+
     public void ButtonClick()
     {
         Time.timeScale = isPaused ? 1.0f : 0.0f;

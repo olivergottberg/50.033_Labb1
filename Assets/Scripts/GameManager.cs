@@ -11,8 +11,6 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent gameOver;
     public IntVariable gameScore;
 
-    private int score = 0;
-
     void Start()
     {
         gameStart.Invoke();
