@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent gameRestart;
     public UnityEvent<int> scoreChange;
     public UnityEvent gameOver;
+    public IntVariable gameScore;
 
     private int score = 0;
 
@@ -18,27 +19,28 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1.0f;
         // subscribe to scene manager scene change
         SceneManager.activeSceneChanged += SceneSetup;
+        SetScore(gameScore.Value);
     }
 
     public void SceneSetup(Scene current, Scene next)
     {
         gameStart.Invoke();
-        SetScore(score);
+        SetScore(gameScore.Value);
     }
 
     public void GameRestart()
     {
         // reset score
-        score = 0;
-        SetScore(score);
+        gameScore.Value = 0;
+        SetScore(gameScore.Value);
         gameRestart.Invoke();
         Time.timeScale = 1.0f;
     }
 
     public void IncreaseScore(int increment)
     {
-        score += increment;
-        SetScore(score);
+        gameScore.ApplyChange(increment);
+        SetScore(gameScore.Value);
     }
 
     public void SetScore(int score)

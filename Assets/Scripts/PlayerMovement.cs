@@ -4,9 +4,16 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     //GameManager gameManager;
-    public float speed = 10;
-    public float maxSpeed = 20;
-    public float upSpeed = 10;
+    public GameConstants gameConstants;
+    float deathImpulse;
+    float upSpeed;
+    float maxSpeed;
+    float speed;
+
+    //public float speed = 10;
+    //public float maxSpeed = 20;
+    //public float upSpeed = 10;
+    //public float deathImpulse = 15;
     private bool onGroundState = true;
     private Rigidbody2D marioBody;
     private SpriteRenderer marioSprite;
@@ -18,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     // for audio
     public AudioSource marioAudio;
     public AudioClip marioDeath;
-    public float deathImpulse = 15;
     public Transform gameCamera;
     int collisionLayerMask = (1 << 6) | (1 << 7) | (1 << 8);
 
@@ -34,6 +40,12 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set constants
+        speed = gameConstants.speed;
+        maxSpeed = gameConstants.maxSpeed;
+        deathImpulse = gameConstants.deathImpulse;
+        upSpeed = gameConstants.upSpeed;
+
         Debug.Log("PLAYER START: " + gameObject.name);
 
         marioSprite = GetComponent<SpriteRenderer>();

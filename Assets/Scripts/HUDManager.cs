@@ -7,6 +7,8 @@ public class HUDManager : MonoBehaviour
     public Transform restartButton;
     public GameObject gameOverPanel;
     public GameObject gameOverScore;
+    public GameObject highscoreText;
+    public IntVariable gameScore;
 
     void Awake()
     {
@@ -34,6 +36,8 @@ public class HUDManager : MonoBehaviour
         gameOverPanel.SetActive(true);
         scoreText.SetActive(false);
         restartButton.gameObject.SetActive(false);
+        highscoreText.GetComponent<TextMeshProUGUI>().text =
+        "Highscore: " + gameScore.previousHighestValue.ToString("D6");
     }
 
     public void GameRestart()
