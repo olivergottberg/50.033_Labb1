@@ -24,7 +24,7 @@ public class EnemyManager : MonoBehaviour
     {
         gameObject.SetActive(true);
         GetComponent<Collider2D>().enabled = true;
-        GetComponent<Animator>().Play("idle");
+        GetComponent<Animator>().Play("GoombaIdle");
         GetComponent<EnemyMovement>().GameRestart();
     }
 }
