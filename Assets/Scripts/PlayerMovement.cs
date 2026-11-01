@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -24,9 +25,11 @@ public class PlayerMovement : MonoBehaviour
     public Animator marioAnimator;
     // for audio
     public AudioSource marioAudio;
-    public AudioClip marioDeath;
+    public AudioClip marioDeath; //Audiosource?
     public Transform gameCamera;
     int collisionLayerMask = (1 << 6) | (1 << 7) | (1 << 8);
+    public UnityEvent onGameOver;
+    private Vector3 initialPosition;
 
     // state
     [System.NonSerialized]
@@ -34,12 +37,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        GameManager.instance.gameRestart.AddListener(GameRestart);
+        //GameManager.instance.gameRestart.AddListener(GameRestart);
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        initialPosition = transform.position;
         // Set constants
         speed = gameConstants.speed;
         maxSpeed = gameConstants.maxSpeed;
@@ -205,12 +209,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void GameRestart()
     {
-        marioBody.transform.position = new Vector3(0.0f, 0.083f, 0.0f);
+        marioBody.transform.position = initialPosition;
+        marioBody.linearVelocity = Vector2.zero;
+
         faceRightState = true;
         marioSprite.flipX = false;
-        marioAnimator.SetTrigger("gameRestart");
+        onGroundState = true;
+        moving = false;
+        jumpedState = false;
         alive = true;
-        gameCamera.position = new Vector3(4.14f, 5.26f, -10);
+
+        marioAnimator.SetTrigger("gameRestart");
+
+        //gameCamera.position = new Vector3(4.14f, 5.26f, -10);
     }
 
     void PlayDeathImpulse()
@@ -218,8 +229,21 @@ public class PlayerMovement : MonoBehaviour
         marioBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);
     }
 
+    public void DamageMario()
+    {
+        if (!alive) return;
+        marioAnimator.Play("mario_die");
+        marioAudio.PlayOneShot(marioDeath);
+        alive = false;
+    }
+
     void GameOverScene()
     {
-        GameManager.instance.GameOver();
+        onGameOver.Invoke();
+    }
+
+    public void RequestPowerupEffect(IPowerup powerup)
+    {
+        powerup.ApplyPowerup(this);
     }
 }

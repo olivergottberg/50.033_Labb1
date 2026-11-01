@@ -8,10 +8,12 @@ public class CameraController : MonoBehaviour
     private float startX; // smallest x-coordinate of the Camera
     private float endX; // largest x-coordinate of the camera
     private float viewportHalfWidth;
+    private Vector3 startPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        startPosition = transform.position;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         // get coordinate of the bottomleft of the viewport
         // z doesn't matter since the camera is orthographic
@@ -29,5 +31,10 @@ public class CameraController : MonoBehaviour
         // check if desiredX is within startX and endX
         if (desiredX > startX && desiredX < endX)
             this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
+    }
+
+    public void GameRestart()
+    {
+        transform.position = startPosition;
     }
 }
