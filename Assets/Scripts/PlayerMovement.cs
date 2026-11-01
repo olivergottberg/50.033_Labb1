@@ -209,6 +209,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void GameRestart()
     {
+        Time.timeScale = 1f;
         marioBody.transform.position = initialPosition;
         marioBody.linearVelocity = Vector2.zero;
 
@@ -240,6 +241,7 @@ public class PlayerMovement : MonoBehaviour
     void GameOverScene()
     {
         onGameOver.Invoke();
+        Time.timeScale = 0f;
     }
 
     public void RequestPowerupEffect(IPowerup powerup)

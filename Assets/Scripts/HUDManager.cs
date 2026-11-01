@@ -13,16 +13,22 @@ public class HUDManager : MonoBehaviour
     void Awake()
     {
         Debug.Log("HUD AWAKE - GameManager: " + GameManager.instance);
-        GameManager.instance.gameStart.AddListener(GameStart);
-        GameManager.instance.scoreChange.AddListener(SetScore);
-        GameManager.instance.gameOver.AddListener(GameOver);
-        GameManager.instance.gameRestart.AddListener(GameRestart);
+        //GameManager.instance.gameStart.AddListener(GameStart);
+        //GameManager.instance.scoreChange.AddListener(SetScore);
+        //GameManager.instance.gameOver.AddListener(GameOver);
+        //GameManager.instance.gameRestart.AddListener(GameRestart);
     }
 
     public void GameStart()
     {
         // hide gameover panel
         gameOverPanel.SetActive(false);
+    }
+
+    public void IncreaseScore(int increment)
+    {
+        gameScore.ApplyChange(increment);
+        SetScore(gameScore.Value);
     }
 
     public void SetScore(int score)
