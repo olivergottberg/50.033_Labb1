@@ -228,7 +228,6 @@ GameObject:
   - component: {fileID: 702057858288502852}
   - component: {fileID: 5102438554911829911}
   - component: {fileID: 662008552869742796}
-  - component: {fileID: 5261289265841808771}
   m_Layer: 5
   m_Name: GameOverRestart
   m_TagString: Untagged
@@ -337,7 +336,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5442325929592435905}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: ButtonClick
         m_Mode: 1
@@ -349,18 +348,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5261289265841808771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951312383782220502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f99781c3debff4a06876155097aa813d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonController
 --- !u!1 &2029968447877008912
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +360,6 @@ GameObject:
   - component: {fileID: 3630517010269074158}
   - component: {fileID: 3411138351278508737}
   - component: {fileID: 5193782351051161833}
-  - component: {fileID: 5923615662402817354}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -482,7 +468,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5923615662402817354}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseButtonController, Assembly-CSharp
         m_MethodName: ButtonClick
         m_Mode: 1
@@ -494,20 +480,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5923615662402817354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029968447877008912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf3c94b515fa456fa27eedd041aac91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PauseButtonController
-  pauseIcon: {fileID: -8878088185706026076, guid: c90f4137274c248169b81d8129002025, type: 3}
-  playIcon: {fileID: 3794550611322748858, guid: 7793b6cd291a34f71a2761afa3738add, type: 3}
 --- !u!1 &3366850734877795127
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +629,6 @@ GameObject:
   - component: {fileID: 4433371512890549118}
   - component: {fileID: 6215469907831816587}
   - component: {fileID: 5621969171320378113}
-  - component: {fileID: 5442325929592435905}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -766,7 +737,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5442325929592435905}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: ButtonClick
         m_Mode: 1
@@ -778,18 +749,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5442325929592435905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3739197835361614402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f99781c3debff4a06876155097aa813d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonController
 --- !u!1 &8528169446796299457
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +898,6 @@ GameObject:
   - component: {fileID: 847540505020944190}
   - component: {fileID: 7462632392880191082}
   - component: {fileID: 8191744755280159680}
-  - component: {fileID: 7391418105809071109}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1034,24 +992,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7391418105809071109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8734007964000933505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0422f11f8cf664dff9ae30afb2d45833, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HUDManager
-  scoreText: {fileID: 1290404271878239367}
-  restartButton: {fileID: 6488976790014875222}
-  gameOverPanel: {fileID: 1937073360329501051}
-  gameOverScore: {fileID: 8528169446796299457}
-  highscoreText: {fileID: 3366850734877795127}
-  gameScore: {fileID: 11400000, guid: c219e36acc4364d37826ac38152cc8e0, type: 2}
 --- !u!1 &8806189541097857186
 GameObject:
   m_ObjectHideFlags: 0
